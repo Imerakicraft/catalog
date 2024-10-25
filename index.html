@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imeraki</title>
+    <link rel="shortcut icon" href="/images/imeraki.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<style>
+    @font-face {
+        font-family: 'Michegar';
+        src: url('/fonts/Michegar.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
+
+    body {
+        font-family: 'Inria Serif', Arial, sans-serif;
+    }
+
+    .hero-section {
+        height: 100vh;
+    }
+
+    .hero-section img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+    .card-title{
+        color: #8C4A2C;
+    }
+
+    /* Ajustar imágenes de productos */
+    .card-img-product {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .hero-content {
+        animation: fadeIn 2s;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+        animation: slideUp 3s ease-in-out;
+    }
+
+    .btn-warning,
+    .btn-danger {
+        animation: bounce 2s infinite;
+    }
+
+    .card-img-custom {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .animate-zoomIn {
+        animation: zoomIn 1.5s ease;
+    }
+    p {
+        font-family: 'Inria Serif', Arial, sans-serif;
+        color: #8C4A2C;
+    }
+    b{
+        color: #8C4A2C;
+        font-family: 'ChauPhilomene', Arial, Bold;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes bounce {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @keyframes zoomIn {
+        0% {
+            transform: scale(0);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes flipIn {
+        0% {
+            transform: rotateY(90deg);
+            opacity: 0;
+        }
+
+        100% {
+            transform: rotateY(0);
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home">Imeraki</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#welcome">Bienvenidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pulseras">Pulseras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hama">Hama beats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#arcilla">Arcilla de secado al aire</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#porcelana">Porcelana Fría</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <header class="hero-section text-center text-black d-flex align-items-center justify-content-center" id="home">
+        <div class="hero-content">
+            <img src="/images/1.png" alt="Catálogo">
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <header class="hero-section text-center text-black d-flex align-items-center justify-content-center" id="welcome">
+        <div class="hero-content">
+            <img src="/images/2.png" alt="Bienvenidos">
+        </div>
+    </header>
+
+    <!-- Pulsera Section -->
+    <section class="container my-5" id="pulseras">
+        <h2 class="text-center animate-zoomIn">Pulseras</h2>
+        <div class="row text-center" id="pulsera-list">
+        </div>
+    </section>
+
+    <!-- Hama beats Section -->
+    <section class="container my-5" id="hama">
+        <h2 class="text-center animate-zoomIn">Hama beats</h2>
+        <div class="row text-center" id="hama-list">
+        </div>
+    </section>
+
+    <!-- Arcilla Section -->
+    <section class="container my-5" id="arcilla">
+        <h2 class="text-center animate-zoomIn">Arcilla de secado al aire</h2>
+        <div class="row text-center" id="arcilla-list">
+        </div>
+    </section>
+
+    <!-- Porcelana Section -->
+    <section class="container my-5" id="porcelana">
+        <h2 class="text-center animate-zoomIn">Porcelana Fría </h2>
+        <div class="row text-center" id="porcelana-list">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container-fluid bg-light py-5" id="contact">
+        <div class="container">
+            <h2 class="text-center animate-zoomIn mb-4">Contáctanos</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Enviar Mensaje</button>
+                    </form>
+                    <div id="form-message" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>Hecho con amor por Imeraki &copy; 2024 - Creaciones que inspiran momentos</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>

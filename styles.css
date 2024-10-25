@@ -1,0 +1,59 @@
+@font-face {
+    font-family: 'Michegar';
+    src: url('/fonts/Michegar.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ChauPhilomene';
+    src: url('/fonts/ChauPhilomene.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inria Serif';
+    src: url('/fonts/InriaSerif.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
+h1, h2, h5{
+    font-family: 'Michegar', Arial, sans-serif;
+    color: #8C4A2C;
+}
+
+.ASCII {
+    font-family: 'Pacifico', Arial, sans-serif;
+    color: #8C4A2C;
+}
+
+.inline-header, .inline-bienvenida {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FEE5E2;
+}
+
+.header {
+    background-color: #FFC0CB;
+    padding: 50px;
+    position: relative;
+}
+.header h1 {
+    font-size: 48px;
+    color: #8C4A2C;
+    margin: 0;
+    white-space: nowrap;
+}
+
+img{
+    width: 500px;
+}
