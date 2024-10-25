@@ -30,15 +30,10 @@ h1, h2, h5{
     color: #8C4A2C;
 }
 
-.inline-header, .inline-bienvenida {
-    display: inline-flex;
-    align-items: baseline;
-}
-
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    font-family: 'Inria Serif', Arial, sans-serif;
     background-color: #FEE5E2;
 }
 
@@ -52,8 +47,4 @@ body {
     color: #8C4A2C;
     margin: 0;
     white-space: nowrap;
-}
-
-img{
-    width: 500px;
 }
