@@ -21,7 +21,7 @@ const hama = [
         title: "Llaveros hama",
         image: "images/llavero_hama.jpg",
         price: 7,
-        specs: "Se requiere que la imagen referencial debe ser nítida para poder realizarse.",
+        specs: "Se requiere que la imagen referencial debe ser nítida para poder realizarse. De preferencia que sean imágenes tipo pixel art.",
         description: "*Totalmente personalizado*"
     },
     {
@@ -113,14 +113,13 @@ document.getElementById('contact-form').addEventListener('submit', handleFormSub
 const btnCart = document.querySelector('.container-cart-icon');
 const containerCartProducts = document.querySelector('.container-cart-products');
 btnCart.addEventListener('click', () => containerCartProducts.classList.toggle('hidden-cart'));
-
 const rowProduct = document.querySelector('.row-product');
 let allProducts = [];
-
 const valorTotal = document.querySelector('.total-pagar');
 const countProducts = document.querySelector('#contador-productos');
 const cartEmpty = document.querySelector('.cart-empty');
 const cartTotal = document.querySelector('.cart-total');
+const modalCompra = document.querySelector('#modal-compra'); // Modal de confirmación de compra
 
 // Event Listener para añadir al carrito
 document.addEventListener('click', e => {
@@ -144,6 +143,7 @@ document.addEventListener('click', e => {
             allProducts.push(infoProduct);
         }
         showHTML();
+        showModal(); // Mostrar modal de confirmación al añadir al carrito
     }
 });
 
@@ -163,7 +163,6 @@ rowProduct.addEventListener('click', e => {
             }
             return item;
         }).filter(item => item !== null); // Filtrar los productos nulos
-
         showHTML();
     }
 });
@@ -179,16 +178,12 @@ const showHTML = () => {
         rowProduct.classList.remove('hidden');
         cartTotal.classList.remove('hidden');
     }
-
     rowProduct.innerHTML = '';
-
     let total = 0;
     let totalOfProducts = 0;
-
     allProducts.forEach(item => {
         const containerProduct = document.createElement('div');
         containerProduct.classList.add('cart-product');
-
         containerProduct.innerHTML = `
             <div class="info-cart-product">
                 <span class="cantidad-producto-carrito">${item.quantity}</span>
@@ -203,6 +198,35 @@ const showHTML = () => {
         total += item.quantity * item.price;
         totalOfProducts += item.quantity;
     });
-    valorTotal.innerText = `${total} soles`;
+    valorTotal.innerText = `${total.toFixed(2)} soles`;
     countProducts.innerText = totalOfProducts;
+    // Mostrar modal de compra si hay productos en el carrito
+    if (totalOfProducts > 0) {
+        modalCompra.classList.remove('hidden');
+        setTimeout(() => {
+            modalCompra.classList.add('hidden');
+        }, 3000); // Ocultar el modal después de 3 segundos
+    }
 };
+
+// Función para mostrar el modal de confirmación al añadir al carrito
+const showModal = () => {
+    modalCompra.classList.remove('hidden');
+    setTimeout(() => {
+        modalCompra.classList.add('hidden');
+    }, 2000); // Ocultar el modal después de 2 segundos
+};
+
+// Función para crear el mensaje de WhatsApp
+function updateWhatsAppLink() {
+    const total = allProducts.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    const itemsList = allProducts.map(item => `${item.quantity} x ${item.title} - ${item.price} soles`).join('%0A');
+    const message = `Hola, me interesa(n) el/los siguiente(s) producto(s):%0A${itemsList}%0ATotal: ${total.toFixed(2)} soles`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappLink = `https://wa.me/qr/FHL4IKTZNHHSG1?text=${encodedMessage}`;
+    document.getElementById('whatsapp-link').href = whatsappLink;
+}
+
+// Llama a esta función cada vez que el modal se abre
+const buyButton = document.getElementById('buy-button');
+buyButton.addEventListener('click', updateWhatsAppLink);
