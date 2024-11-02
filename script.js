@@ -221,10 +221,11 @@ const showModal = () => {
 // Función para crear el mensaje de WhatsApp
 function updateWhatsAppLink() {
     const total = allProducts.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-    const itemsList = allProducts.map(item => `${item.quantity} x ${item.title} - ${item.price} soles`).join('%0A');
-    const message = `Hola, me interesa(n) el/los siguiente(s) producto(s):%0A${itemsList}%0ATotal: ${total.toFixed(2)} soles`;
+    // Cambia el separador por un espacio o coma para el mensaje
+    const itemsList = allProducts.map(item => `${item.quantity} x ${item.title}`).join(', ');
+    const message = `Hola, me interesa(n) el/los siguiente(s) producto(s): ${itemsList}. Total: ${total.toFixed(2)} soles.`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappNumber = '+51904030201'; // Reemplaza esto con tu número de WhatsApp
+    const whatsappNumber = '+51904030201';
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     document.getElementById('whatsapp-link').href = whatsappLink;
 }
