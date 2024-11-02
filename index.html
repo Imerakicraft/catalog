@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="https://wa.me/qr/FHL4IKTZNHHSG1">Imeraki</a>
+            <a class="navbar-brand" href="#home">Imeraki</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
                 <span class="navbar-toggler-icon"></span>
@@ -39,28 +39,14 @@
                             </div>
                             <!-- Carrito de compras -->
                             <div class="container-cart-products hidden-cart">
-                                <div class="row-product hidden">
-                                    <div class="cart-product">
-                                        <div class="info-cart-product">
-                                            <span class="cantidad-producto-carrito">1</span>
-                                            <p class="titulo-producto-carrito">Pulseras</p>
-                                            <span class="precio-producto-carrito">$80</span>
-                                        </div>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="icon-close">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </div>
-                                </div>
+                                <div class="row-product hidden"></div>
                                 <div class="cart-total hidden">
                                     <h3>Total:</h3>
                                     <span class="total-pagar">0 soles</span>
-                                    <button class="btn btn-danger mt-2" id="buy-button">Comprar</button>
+                                    <button class="btn btn-danger mt-2" id="buy-button" data-bs-toggle="modal" data-bs-target="#paymentModal">Comprar</button>
                                 </div>
                                 <p class="cart-empty">El carrito está vacío</p>
                             </div>
-
                             <!-- Modal para el QR y link de pago -->
                             <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel"
                                 aria-hidden="true">
@@ -72,44 +58,27 @@
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body text-center">
-                                            <img src="images/qr_pago.jpg" alt="Código QR de pago"
-                                                class="img-fluid mb-3">
-                                            <p>Escanea el código QR para pagar o <a
-                                                    href="https://wa.me/qr/FHL4IKTZNHHSG1" target="_blank">paga a través
-                                                    de WhatsApp</a>.</p>
+                                            <a href="#" id="whatsapp-link">Comunícate a través
+                                                de WhatsApp</a>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cerrar</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#welcome">Bienvenidos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pulseras">Pulseras</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#hama">Hama beats</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#arcilla">Arcilla de secado al aire</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#porcelana">Pasta flexible</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contacto</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#welcome">Bienvenidos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pulseras">Pulseras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hama">Hama beats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#arcilla">Arcilla de secado al aire</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#porcelana">Pasta flexible</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <!-- Home Section -->
     <header class="hero-section text-center text-black d-flex align-items-center justify-content-center" id="home">
         <div class="hero-content">
@@ -122,35 +91,26 @@
             <img src="/images/2.png" alt="Bienvenidos">
         </div>
     </header>
-
     <!-- Pulsera Section -->
     <section class="container my-5" id="pulseras">
         <h2 class="text-center animate-zoomIn">Pulseras</h2>
-        <div class="row text-center" id="pulsera-list">
-        </div>
+        <div class="row text-center" id="pulsera-list"></div>
     </section>
-
     <!-- Hama beats Section -->
     <section class="container my-5" id="hama">
         <h2 class="text-center animate-zoomIn">Hama beats</h2>
-        <div class="row text-center" id="hama-list">
-        </div>
+        <div class="row text-center" id="hama-list"></div>
     </section>
-
     <!-- Arcilla Section -->
     <section class="container my-5" id="arcilla">
         <h2 class="text-center animate-zoomIn">Arcilla de secado al aire</h2>
-        <div class="row text-center" id="arcilla-list">
-        </div>
+        <div class="row text-center" id="arcilla-list"></div>
     </section>
-
     <!-- Porcelana Section -->
     <section class="container my-5" id="porcelana">
         <h2 class="text-center animate-zoomIn">Pasta flexible </h2>
-        <div class="row text-center" id="porcelana-list">
-        </div>
+        <div class="row text-center" id="porcelana-list"></div>
     </section>
-
     <!-- Contact Section -->
     <section class="container-fluid py-5" id="contact">
         <div class="container">
@@ -188,10 +148,9 @@
     <footer class="text-center py-4">
         <p>Hecho con amor por Imeraki &copy; 2024 - Creaciones que inspiran momentos</p>
     </footer>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript -->
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
