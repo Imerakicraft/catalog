@@ -210,14 +210,6 @@ const showHTML = () => {
     }
 };
 
-// Función para mostrar el modal de confirmación al añadir al carrito
-const showModal = () => {
-    modalCompra.classList.remove('hidden');
-    setTimeout(() => {
-        modalCompra.classList.add('hidden');
-    }, 2000); // Ocultar el modal después de 2 segundos
-};
-
 // Función para crear el mensaje de WhatsApp
 function updateWhatsAppLink() {
     const total = allProducts.reduce((acc, item) => acc + (item.price * item.quantity), 0);
