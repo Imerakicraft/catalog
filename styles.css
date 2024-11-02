@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'Michegar';
-    src: url('/fonts/Michegar.woff') format('woff');
+    src: url('fonts/Michegar.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ChauPhilomene';
-    src: url('/fonts/ChauPhilomene.woff') format('woff');
+    src: url('fonts/ChauPhilomene.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Inria Serif';
-    src: url('/fonts/InriaSerif.woff') format('woff');
+    src: url('fonts/InriaSerif.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
