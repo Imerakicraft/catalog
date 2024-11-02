@@ -213,15 +213,19 @@ const showHTML = () => {
 // Función para crear el mensaje de WhatsApp
 function updateWhatsAppLink() {
     const total = allProducts.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-    // Cambia el separador por un espacio o coma para el mensaje
     const itemsList = allProducts.map(item => `${item.quantity} x ${item.title}`).join(', ');
-    const message = `Hola, me interesa(n) el/los siguiente(s) producto(s): ${itemsList}. Total: ${total.toFixed(2)} soles.`;
+    // Verificar si hay solo un artículo y si la cantidad es 1
+    let message;
+    if (allProducts.length === 1 && allProducts[0].quantity === 1) {
+        message = `Hola, me interesa el siguiente producto: ${itemsList}. Total: ${total.toFixed(2)} soles.`;
+    } else {
+        message = `Hola, me interesan los siguientes productos: ${itemsList}. Total: ${total.toFixed(2)} soles.`;
+    }
     const encodedMessage = encodeURIComponent(message);
     const whatsappNumber = '+51904030201';
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     document.getElementById('whatsapp-link').href = whatsappLink;
 }
-
 // Llama a esta función cada vez que el modal se abre
 const buyButton = document.getElementById('buy-button');
 buyButton.addEventListener('click', updateWhatsAppLink);
