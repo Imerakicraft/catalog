@@ -135,12 +135,12 @@ document.addEventListener('click', e => {
         if (exists) {
             allProducts = allProducts.map(item => {
                 if (item.title === infoProduct.title) {
-                    item.quantity++;
+                    item.quantity++; // Incrementar la cantidad del producto
                 }
                 return item;
             });
         } else {
-            allProducts.push(infoProduct);
+            allProducts.push(infoProduct); // Agregar un nuevo producto al carrito
         }
         showHTML();
         showModal(); // Mostrar modal de confirmación al añadir al carrito
@@ -156,7 +156,7 @@ rowProduct.addEventListener('click', e => {
         allProducts = allProducts.map(item => {
             if (item.title === title) {
                 if (item.quantity > 1) {
-                    item.quantity--;
+                    item.quantity--; // Decrementar la cantidad
                 } else {
                     return null; // Retornar null para eliminar el producto si la cantidad es 1
                 }
@@ -200,6 +200,7 @@ const showHTML = () => {
     });
     valorTotal.innerText = `${total.toFixed(2)} soles`;
     countProducts.innerText = totalOfProducts;
+
     // Mostrar modal de compra si hay productos en el carrito
     if (totalOfProducts > 0) {
         modalCompra.classList.remove('hidden');
