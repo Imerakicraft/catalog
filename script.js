@@ -224,7 +224,8 @@ function updateWhatsAppLink() {
     const itemsList = allProducts.map(item => `${item.quantity} x ${item.title} - ${item.price} soles`).join('%0A');
     const message = `Hola, me interesa(n) el/los siguiente(s) producto(s):%0A${itemsList}%0ATotal: ${total.toFixed(2)} soles`;
     const encodedMessage = encodeURIComponent(message);
-    const whatsappLink = `https://wa.me/qr/FHL4IKTZNHHSG1?text=${encodedMessage}`;
+    const whatsappNumber = '+51904030201'; // Reemplaza esto con tu número de WhatsApp
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     document.getElementById('whatsapp-link').href = whatsappLink;
 }
 
