@@ -98,16 +98,29 @@ renderProducts(arcilla, 'arcilla-list');
 renderProducts(porcelana, 'porcelana-list');
 
 // Función de envío de formulario de contacto
-function handleFormSubmission(event) {
+const btn = document.getElementById('button');
+// Manejo del evento de envío del formulario
+document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    const formMessage = document.getElementById('form-message');
-    formMessage.innerHTML = `<div class="alert alert-success">¡Gracias, ${name}! Tu mensaje ha sido enviado.</div>`;
-    document.getElementById('contact-form').reset();
-}
-document.getElementById('contact-form').addEventListener('submit', handleFormSubmission);
+    btn.value = 'Enviando...';
+    const serviceID = 'default_service';
+    const templateID = 'template_oakikk7';
+    // Enviar el formulario con emailjs
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            btn.value = 'Enviar Email';
+            alert('¡Tu mensaje ha sido enviado!');
+            // Mostrar mensaje de éxito personalizado
+            const name = document.getElementById('name').value;
+            const formMessage = document.getElementById('form-message');
+            formMessage.innerHTML = `<div class="alert alert-success">¡Gracias, ${name}! Tu mensaje ha sido enviado.</div>`;
+            // Reiniciar el formulario
+            document.getElementById('contact-form').reset();
+        }, (err) => {
+            btn.value = 'Send Email';
+            alert(JSON.stringify(err));
+        });
+});
 
 // Funcionalidad del carrito de compras
 const btnCart = document.querySelector('.container-cart-icon');
@@ -200,7 +213,6 @@ const showHTML = () => {
     });
     valorTotal.innerText = `${total.toFixed(2)} soles`;
     countProducts.innerText = totalOfProducts;
-
     // Mostrar modal de compra si hay productos en el carrito
     if (totalOfProducts > 0) {
         modalCompra.classList.remove('hidden');
@@ -209,7 +221,6 @@ const showHTML = () => {
         }, 3000); // Ocultar el modal después de 3 segundos
     }
 };
-
 // Función para crear el mensaje de WhatsApp
 function updateWhatsAppLink() {
     const total = allProducts.reduce((acc, item) => acc + (item.price * item.quantity), 0);
