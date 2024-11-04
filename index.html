@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imeraki</title>
-    <link rel="shortcut icon" href="images/imeraki.png">
+    <link rel="shortcut icon" href="/images/imeraki.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript"> emailjs.init('EtzR55uq27vbr19IB')
+</script>
 </head>
 <body>
     <!-- Navbar -->
@@ -112,32 +115,33 @@
         <div class="row text-center" id="porcelana-list"></div>
     </section>
     <!-- Contact Section -->
-    <section class="container-fluid py-5" id="contact">
-        <div class="container">
-            <h2 class="text-center animate-zoomIn mb-4 contact">Contáctanos</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form id="contact-form">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-warning">Enviar Mensaje</button>
-                    </form>
-                    <br>
-                    <div id="form-message" class="mt-3"></div>
-                </div>
+<section class="container-fluid py-5" id="contact">
+    <div class="container">
+        <h2 class="text-center animate-zoomIn mb-4 contact">Contáctanos</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form id="contact-form">
+                    <div class="mb-3 field">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="name" name="from_name" required>
+                    </div>
+                    <div class="mb-3 field">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="email" name="email_id" required>
+                    </div>
+                    <div class="mb-3 field">
+                        <label for="message" class="form-label">Mensaje</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <input type="submit" id="button" class="btn btn-warning" value="Enviar Mensaje">
+                </form>
+                <br>
+                <div id="form-message" class="mt-3"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <a href="https://www.instagram.com/imeraki.craft?igsh=aGZuYzlwanUyamIx" class="btn-ig" target="_blank">
         <i class="fa fa-instagram icono"></i>
     </a>
