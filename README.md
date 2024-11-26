@@ -20,49 +20,28 @@ Ensure you have the following installed on your system:
 
 ### Installation
 Clone the repository and navigate into the project directory:
-```bash
-
 git clone https://github.com/Imerakicraft/catalog.git
 cd catalog
-Install the required dependencies:
+###Install the required dependencies:
 npm install
-
-Environment Setup
-
+###Environment Setup
 Create a .env file in the root directory and configure the following variables:
-
 PORT=3000
 DB_URI=mongodb://localhost:27017/catalog
 JWT_SECRET=yourSecretKey
-
-Running the Application
-
-Start the development server:
-
+###Running the Application
+###Start the development server:
 npm run dev
-
 The application will be accessible at http://localhost:3000.
-
 Testing
-
 Run tests to ensure the application behaves as expected:
-
 npm test
-
-API Endpoints
-
+###API Endpoints
 Below are the primary endpoints for the catalog system:
-
-Contributing
-
+###Contributing
 Contributions are welcome! Please fork the repository and create a pull request. Ensure that your code adheres to the existing style and includes relevant tests.
-
-License
-
+###License
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-Acknowledgments
-
+###Acknowledgments
 Imerakicraft for initiating the project.
-
 Open-source libraries and tools that make this development possible.
